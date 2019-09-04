@@ -13,7 +13,7 @@
   {{ detail.fullName }}
 </div>
 <div class="date">
-  Check in date: {{detail.checkInDate}}
+  Check in date: {{ detail.checkInDate | date: 'dd/MM/yyyy' }}
 </div>
 <div class="children">
   Children: {{ detail.children?.length || 0 }}
