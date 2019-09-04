@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
+import { PassengerDashboardService } from "../../passenger-dashboard.service";
 
 @Component({
   selector: 'passenger-dashboard',
@@ -9,56 +10,11 @@ import { Passenger } from '../../models/passenger.interface';
 export class PassengerDashboardComponent implements OnInit {
   public passengers: Passenger[];
 
-  constructor(){}
+  constructor(private passengerService: PassengerDashboardService){}
 
   public ngOnInit(): void {
-    // data with passengers information
-    this.passengers = [
-      {
-        id: 1,
-        fullName: 'Stephen',
-        checkedIn: true,
-        checkInDate: 1490742000000,
-        children: null
-      }, {
-        id: 2,
-        fullName: 'Rose',
-        checkedIn: false,
-        checkInDate: null,
-        children: [
-          {
-            name: 'Ted',
-            age: 12
-          }, {
-            name: 'Chloe',
-            age: 7
-          }
-        ]
-      }, {
-        id: 3,
-        fullName: 'James',
-        checkedIn: true,
-        checkInDate: 149606000000,
-        children: null
-      }, {
-        id: 4,
-        fullName: 'Louise',
-        checkedIn: true,
-        checkInDate: 148841280000,
-        children: [
-          {
-            name: 'Jessica',
-            age: 13
-          }
-        ]
-      }, {
-        id: 5,
-        fullName: 'Tina',
-        checkedIn: false,
-        checkInDate: null,
-        children: null
-      },
-    ]
+    // synchronously call to get data from passengers
+    this.passengers = this.passengerService.getPassengers();
   }
 
   // edit function
