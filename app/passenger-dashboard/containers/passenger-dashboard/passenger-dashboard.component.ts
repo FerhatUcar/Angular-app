@@ -1,5 +1,5 @@
-import {Component, OnInit} from "@angular/core";
-import {Passenger} from "../../models/passenger.interface";
+import { Component, OnInit } from '@angular/core';
+import { Passenger } from '../../models/passenger.interface';
 
 @Component({
   selector: 'passenger-dashboard',
@@ -58,5 +58,13 @@ export class PassengerDashboardComponent implements OnInit {
         children: null
       },
     ]
+  }
+
+  handleRemove(event) {
+
+  }
+
+  handleEdit(event) {
+
   }
 }

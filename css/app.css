@@ -37,7 +37,6 @@ button {
 input[type=text],
 input[type=email],
 input[type=number] {
-  border: none;
   background: #fff;
   font-size: 13px;
   padding: 6px 30px 6px 10px;
@@ -49,10 +48,12 @@ button {
   cursor: pointer;
   background: #9f72e6;
   border: 0;
+  width: 150px;
   border-radius: 2px;
   padding: 5px 10px;
   text-align: center;
   color: #fff;
+  margin-top: 1rem;
 }
 button:disabled {
   cursor: not-allowed;
@@ -64,6 +65,12 @@ p {
 
 body {
   padding: 50px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
 }
 
 h3 {
