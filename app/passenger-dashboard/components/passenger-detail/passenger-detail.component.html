@@ -19,10 +19,12 @@
   Children: {{ detail.children?.length || 0 }}
 </div>
 
-<button (click)="toggleEdit()">
+<button
+  [class.done]="editing"
+  (click)="toggleEdit()">
   {{ editing ? 'Done' : 'Edit'}}
 </button>
 
-<button (click)="onRemove()">
+<button class="remove" (click)="onRemove()">
   Remove
 </button>

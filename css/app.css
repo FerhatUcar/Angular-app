@@ -55,6 +55,12 @@ button {
   color: #fff;
   margin-top: 1rem;
 }
+button.done {
+  background: #2ecc71;
+}
+button.remove {
+  background: #c0392b;
+}
 button:disabled {
   cursor: not-allowed;
   background: #b598e4;
