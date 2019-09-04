@@ -7,11 +7,12 @@ import { Passenger } from '../../models/passenger.interface';
   templateUrl: 'passenger-dashboard.component.html'
 })
 export class PassengerDashboardComponent implements OnInit {
-  passengers: Passenger[];
+  public passengers: Passenger[];
 
   constructor(){}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    // data with passengers information
     this.passengers = [
       {
         id: 1,
@@ -60,11 +61,24 @@ export class PassengerDashboardComponent implements OnInit {
     ]
   }
 
-  handleRemove(event) {
+  // edit function
+  // event is an object of a Passenger type
+  public handleEdit(event: Passenger) {
+    this.passengers = this.passengers.map((passenger: Passenger) => {
 
+      // it detects if we are in the current passenger
+      // if it is, fire immutable operation
+      // takes original passenger object and merges latest changes of the event in
+      if (passenger.id === event.id) passenger = Object.assign({}, passenger, event);
+
+      return passenger;
+    })
   }
 
-  handleEdit(event) {
-
+  // remove function
+  // event is an object of a Passenger type
+  public handleRemove(event: Passenger) {
+    // checking if event id is not equal to passenger id
+    this.passengers = this.passengers.filter((passenger: Passenger) => passenger.id !== event.id);
   }
 }
