@@ -1,5 +1,5 @@
 import { Passenger } from "./models/passenger.interface";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient} from "@angular/common/http";
 
 export class PassengerDashboardService {
   constructor(http: HttpClient){}
