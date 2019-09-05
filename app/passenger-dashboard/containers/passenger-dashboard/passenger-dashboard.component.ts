@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { Passenger } from '../../models/passenger.interface';
 import { PassengerDashboardService } from "../../passenger-dashboard.service";
 
@@ -11,7 +12,10 @@ import { PassengerDashboardService } from "../../passenger-dashboard.service";
 export class PassengerDashboardComponent implements OnInit {
   public passengers: Passenger[];
 
-  constructor(private passengerService: PassengerDashboardService){}
+  constructor(
+    private router: Router,
+    private passengerService: PassengerDashboardService
+  ){}
 
   public ngOnInit(): void {
     // synchronously call to get data from passengers
@@ -47,5 +51,9 @@ export class PassengerDashboardComponent implements OnInit {
         // checking if event id is not equal to passenger id
         this.passengers = this.passengers.filter((passenger: Passenger) => passenger.id !== event.id);
       })
+  }
+
+  public handleView(event: Passenger) {
+    this.router.navigate(['/passengers', event.id]);
   }
 }

@@ -12,13 +12,18 @@ export class PassengerDetailComponent implements OnChanges {
   @Input() detail: Passenger;
 
   // Outputs
-  @Output() remove: EventEmitter<any> = new EventEmitter();
-  @Output() edit: EventEmitter<any> = new EventEmitter();
+  @Output() remove: EventEmitter<Passenger> = new EventEmitter<Passenger>();
+  @Output() edit: EventEmitter<Passenger> = new EventEmitter<Passenger>();
+  @Output() view: EventEmitter<Passenger> = new EventEmitter<Passenger>();
 
   editing: boolean = false;
 
   public onNameChange(value: string): void {
     this.detail.fullName = value;
+  }
+
+  public goToPassenger() {
+    this.view.emit(this.detail);
   }
 
   public toggleEdit() {
