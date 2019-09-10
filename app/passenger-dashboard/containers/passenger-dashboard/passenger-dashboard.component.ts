@@ -54,6 +54,6 @@ export class PassengerDashboardComponent implements OnInit {
   }
 
   public handleView(event: Passenger) {
-    this.router.navigate(['/passengers', event.id]);
+    this.router.navigate(['/passengers', event.id]).then(r => {});
   }
 }

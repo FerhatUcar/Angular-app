@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 // services
@@ -37,6 +37,6 @@ export class PassengerViewerComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/passengers']);
+    this.router.navigate(['/passengers']).then(r => {});
   }
 }
