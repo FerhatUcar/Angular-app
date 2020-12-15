@@ -84,4 +84,3 @@ The project uses `webpack` to build and compile all of our assets. This will do 
 - Allow us to use SASS for our component's CSS files
 - Provide the polyfills needed to run our app in all modern browsers
 - Mock a JSON backend using [json-server](https://github.com/typicode/json-server)
-# Angular-app
